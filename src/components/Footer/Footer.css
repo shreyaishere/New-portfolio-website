@@ -1,0 +1,39 @@
+.footer{
+
+padding:60px 20px;
+
+text-align:center;
+}
+
+.footer-icons{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+margin-bottom:20px;
+}
+
+.footer-icons a{
+
+font-size:1.5rem;
+
+transition:.3s;
+}
+
+.footer-icons a:hover{
+
+transform:
+translateY(-5px);
+
+color:
+var(--secondary);
+}
+
+.footer p{
+
+color:
+var(--muted);
+}

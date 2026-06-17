@@ -1,0 +1,47 @@
+.education-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,
+minmax(320px,1fr));
+
+gap:30px;
+}
+
+.education-card{
+
+padding:35px;
+
+border-radius:25px;
+
+transition:.4s;
+}
+
+.education-card:hover{
+
+transform:
+translateY(-10px);
+}
+
+.education-card h3{
+
+margin-bottom:15px;
+
+font-size:1.3rem;
+}
+
+.education-card p{
+
+color:var(--muted);
+
+margin-bottom:15px;
+}
+
+.education-card span{
+
+color:
+var(--secondary);
+
+font-weight:600;
+}
