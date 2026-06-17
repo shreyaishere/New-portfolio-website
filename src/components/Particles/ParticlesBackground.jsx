@@ -1,52 +1,102 @@
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { useCallback } from "react";
+import Particles from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 export default function ParticlesBackground() {
 
-  const particlesInit = async (main) => {
-    await loadFull(main);
-  };
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine);
+  }, []);
 
   return (
     <Particles
-      id="tsparticles"
+      id="particles"
       init={particlesInit}
       options={{
-        fpsLimit: 60,
+        background: {
+          color: {
+            value: "transparent",
+          },
+        },
 
         particles: {
           number: {
-            value: 80
+            value: 50,
           },
 
           color: {
-            value: "#8b5cf6"
+            value: "#8b5cf6",
           },
 
           links: {
             enable: true,
-            color: "#06b6d4",
-            opacity: 0.2
+            color: "#8b5cf6",
+            opacity: 0.2,
           },
 
           move: {
             enable: true,
-            speed: 1
-          },
-
-          opacity: {
-            value: 0.5
+            speed: 1,
           },
 
           size: {
-            value: 3
-          }
+            value: 2,
+          },
         },
-
-        background: {
-          color: "transparent"
-        }
       }}
     />
   );
 }
+
+// import Particles from "react-tsparticles";
+// import { loadFull } from "tsparticles";
+
+// export default function ParticlesBackground() {
+
+//   const particlesInit = async (main) => {
+//     await loadFull(main);
+//   };
+
+//   return (
+//     <Particles
+//       id="tsparticles"
+//       init={particlesInit}
+//       options={{
+//         fpsLimit: 60,
+
+//         particles: {
+//           number: {
+//             value: 80
+//           },
+
+//           color: {
+//             value: "#8b5cf6"
+//           },
+
+//           links: {
+//             enable: true,
+//             color: "#06b6d4",
+//             opacity: 0.2
+//           },
+
+//           move: {
+//             enable: true,
+//             speed: 1
+//           },
+
+//           opacity: {
+//             value: 0.5
+//           },
+
+//           size: {
+//             value: 3
+//           }
+//         },
+
+//         background: {
+//           color: "transparent"
+//         }
+//       }}
+//     />
+//   );
+// }
