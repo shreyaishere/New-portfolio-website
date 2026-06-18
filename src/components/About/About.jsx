@@ -48,32 +48,37 @@ export default function About() {
         <div className="about-card glass">
 
           <p>
+              I'm Shreya Shukla, a fresher Full Stack Developer pursuing my BCA at Maharishi
+              University. My career objective is simple: build software that's fast,
+              accessible, and genuinely useful.
+            </p>
+            <p>
+              I love taking an idea from a Figma sketch to a deployed MERN application —
+              writing clean React components on the frontend, designing REST APIs on the
+              backend, and shipping with Git/GitHub.
+            </p>
+            <p>
+              <ul class="portfolio-list">
+  <li>
+    <span class="bullet-dot"></span>
+    <span class="list-text">Passionate about responsive, modern web UI</span>
+  </li>
+  <li>
+    <span class="bullet-dot"></span>
+    <span class="list-text">Quick learner who enjoys picking up new stacks</span>
+  </li>
+  <li>
+    <span class="bullet-dot"></span>
+    <span class="list-text">Strong problem-solving and debugging mindset</span>
+  </li>
+  <li>
+    <span class="bullet-dot"></span>
+    <span class="list-text">Comfortable across MERN, MySQL, and REST APIs</span>
+  </li>
+</ul>
+</p>
+              
 
-            Fresher Full Stack Developer with
-            knowledge of HTML, CSS,
-            JavaScript, React.js,
-            Node.js and MongoDB.
-
-          </p>
-
-          <p>
-
-            Skilled in building responsive
-            web applications and REST APIs
-            with strong understanding of
-            Git, GitHub and Software
-            Development Life Cycle.
-
-          </p>
-
-          <p>
-
-            Quick learner with excellent
-            problem-solving abilities and
-            passion for modern web
-            technologies.
-
-          </p>
 
         </div>
 

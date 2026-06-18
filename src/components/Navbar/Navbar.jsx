@@ -3,9 +3,10 @@ import "./Navbar.css";
 import { Link } from "react-scroll";
 
 import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
 
 import { FaMoon, FaSun } from "react-icons/fa";
+
+import { useTheme } from "../../context/ThemeContext";
 
 import { useState } from "react";
 
@@ -18,7 +19,7 @@ import { IoClose } from "react-icons/io5";
 export default function Navbar() {
   const active = useActiveSection();
 
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useTheme();
 
   const [open, setOpen] = useState(false);
 
@@ -52,32 +53,15 @@ export default function Navbar() {
         ))}
       </ul>
 
-      {/* <button className="menu-btn" onClick={() => setOpen(!open)}>
-        {open ? <IoClose /> : <HiMenuAlt3 />}
-      </button> */}
-
       <div className="navbar-actions">
+        <button className="theme-btn" onClick={toggleTheme}>
+          {theme === "dark" ? <FaSun /> : <FaMoon />}
+        </button>
 
-  <button
-    className="theme-toggle"
-    onClick={toggleTheme}
-  >
-
-    {theme === "dark"
-      ? <FaSun />
-      : <FaMoon />
-    }
-
-  </button>
-
-  <button
-    className="menu-btn"
-    onClick={() => setOpen(!open)}
-  >
-    {open ? <IoClose /> : <HiMenuAlt3 />}
-  </button>
-
-</div>
+        <button className="menu-btn" onClick={() => setOpen(!open)}>
+          {open ? <IoClose /> : <HiMenuAlt3 />}
+        </button>
+      </div>
     </nav>
   );
 }

@@ -1,90 +1,133 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
 }
 
-html{
-scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at left center,
+      rgba(0, 255, 255, 0.15),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at right top,
+      rgba(168, 85, 247, 0.18),
+      transparent 30%
+    ),
+    #07111f;
+
+  color: white;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+section {
+  padding: 120px 10%;
+  position: relative;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+
+  margin-bottom: 60px;
+
+  text-align: center;
+}
+
+.gradient-text {
+  background: var(--gradient);
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+.light {
+  --bg-primary: #ffffff;
+  --text: #111827;
+}
+
+.dark {
+  --bg-primary: #030712;
+  --text: #ffffff;
+}
+
+body {
+  background: var(--bg-primary);
+
+  color: var(--text);
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
 }
 
 body{
 
-font-family:"Inter",sans-serif;
+ background:
+ var(--bg);
 
-background:
-var(--bg-primary);
+ color:
+ var(--text);
 
-color:
-var(--text);
-
-overflow-x:hidden;
+ transition:
+ .35s ease;
 }
 
-a{
-text-decoration:none;
-color:inherit;
+.glass{
+
+ background:
+ var(--card);
 }
+.theme-btn{
 
-ul{
-list-style:none;
-}
+ width:52px;
 
-img{
-max-width:100%;
-display:block;
-}
+ height:52px;
 
-section{
-padding:120px 10%;
-position:relative;
-}
+ border-radius:50%;
 
-.container{
-max-width:1300px;
-margin:auto;
-}
+ border:none;
 
-.section-title{
+ cursor:pointer;
 
-font-size:3rem;
-font-weight:700;
+ background:
+ rgba(255,255,255,.08);
 
-margin-bottom:60px;
+ backdrop-filter:
+ blur(15px);
 
-text-align:center;
-}
+ color:white;
 
-.gradient-text{
-background:var(--gradient);
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:
-transparent;
-}
-.light{
-
---bg-primary:#ffffff;
---text:#111827;
-}
-
-.dark{
-
---bg-primary:#030712;
---text:#ffffff;
-}
-
-body{
-
-background:
-var(--bg-primary);
-
-color:
-var(--text);
-
-transition:
-background .4s ease,
-color .4s ease;
-
+ font-size:18px;
 }

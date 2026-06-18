@@ -1,13 +1,25 @@
+import "./Loader.css";
+
 export default function Loader() {
+  return (
+    <div className="loader-screen">
 
- return (
-  <div className="loader">
+      <div className="loader-wrapper">
 
-    <div className="loader-circle"></div>
+        <div className="loader-ring">
 
-    <h2>Shreya.</h2>
+          <div className="loader-center">
+            SS
+          </div>
 
-  </div>
- );
+        </div>
 
+        <p className="loader-text">
+          LOADING PORTFOLIO...
+        </p>
+
+      </div>
+
+    </div>
+  );
 }

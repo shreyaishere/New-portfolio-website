@@ -68,10 +68,32 @@ margin-bottom:10px;
 color:var(--muted);
 }
 
-.timeline-card ul{
-margin-top:20px;
-}
+.portfolio-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
 
-.timeline-card li{
-margin-bottom:12px;
-}
+  .portfolio-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .bullet-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #22d3ee; /* Modern cyan accent color */
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .list-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+  }

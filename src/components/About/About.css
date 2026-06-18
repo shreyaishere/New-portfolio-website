@@ -12,7 +12,7 @@ padding:50px;
 
 border-radius:30px;
 
-text-align:center;
+text-align:left;
 }
 
 .about-card p{
@@ -33,3 +33,34 @@ padding:30px;
 }
 
 }
+
+.portfolio-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Spaces out the bullet points */
+  }
+
+  .portfolio-list li {
+    display: flex;
+    align-items: flex-start; /* Aligns dot perfectly if text wraps to a second line */
+    gap: 10px;
+  }
+
+  .bullet-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #22d3ee; /* Modern cyan accent color */
+    border-radius: 50%; /* Makes it a perfectly round dot */
+    margin-top: 7px; /* Aligns center with the first line of text */
+    flex-shrink: 0; /* Prevents the dot from squishing */
+  }
+
+  .list-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color:var(--muted);
+ /* Slightly softened font color for a clean UI look */
+  }

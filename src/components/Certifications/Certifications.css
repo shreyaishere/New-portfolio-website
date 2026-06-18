@@ -1,29 +1,405 @@
-.cert-grid{
+/* ==========================================
+   SECTION HEADING
+========================================== */
 
-display:grid;
+.section-label {
 
-grid-template-columns:
-repeat(auto-fit,
-minmax(280px,1fr));
+  color: #00e5ff;
 
-gap:25px;
+  letter-spacing: 5px;
+
+  font-size: 0.8rem;
+
+  margin-bottom: 16px;
+
+  text-transform: uppercase;
 }
 
-.cert-card{
+.section-title {
 
-padding:30px;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
 
-border-radius:20px;
+  font-weight: 800;
 
-text-align:center;
+  margin-bottom: 50px;
 
-font-weight:600;
-
-transition:.3s;
+  line-height: 1.05;
 }
 
-.cert-card:hover{
+.section-title span {
 
-transform:
-translateY(-10px);
+  background: linear-gradient(
+    90deg,
+    #38bdf8,
+    #d946ef
+  );
+
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+/* ==========================================
+   ACHIEVEMENT CARD
+========================================== */
+
+.achievement-card {
+
+  display: grid;
+
+  grid-template-columns:
+    95px
+    1fr
+    110px;
+
+  gap: 24px;
+
+  align-items: center;
+
+  padding: 40px;
+
+  margin-bottom: 55px;
+
+  border-radius: 32px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 45, 65, 0.75),
+      rgba(55, 35, 95, 0.72)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter:
+    blur(18px);
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+.achievement-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at left center,
+      rgba(0, 229, 255, 0.08),
+      transparent 40%
+    );
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.achievement-icon {
+
+  width: 85px;
+
+  height: 85px;
+
+  border-radius: 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 3rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00e5ff,
+      #d946ef
+    );
+
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.achievement-label {
+
+  color: #00e5ff;
+
+  letter-spacing: 5px;
+
+  font-size: 0.78rem;
+
+  display: block;
+
+  margin-bottom: 12px;
+
+  text-transform: uppercase;
+}
+
+.achievement-content h3 {
+
+  font-size: clamp(
+    1.7rem,
+    3vw,
+    2.7rem
+  );
+
+  line-height: 1.15;
+
+  margin-bottom: 12px;
+
+  color: white;
+
+  font-weight: 700;
+}
+
+.achievement-content p {
+
+  color: #94a3b8;
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+/* ==========================================
+   RANK
+========================================== */
+
+.achievement-rank {
+
+  text-align: center;
+}
+
+.achievement-rank h1 {
+
+  font-size: 4rem;
+
+  margin: 0;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7dd3fc,
+      #c084fc
+    );
+
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+.achievement-rank span {
+
+  color: #94a3b8;
+
+  font-size: 0.72rem;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   CERTIFICATE GRID
+========================================== */
+
+.certifications-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 24px;
+}
+
+/* ==========================================
+   CERTIFICATE CARD
+========================================== */
+
+.cert-card {
+
+  min-height: 220px;
+
+  padding: 28px;
+
+  border-radius: 28px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 35, 60, 0.65),
+      rgba(52, 25, 85, 0.55)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:
+    blur(20px);
+
+  transition:
+    all .35s ease;
+}
+
+.cert-card:hover {
+
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(0,229,255,.25);
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.3);
+}
+
+/* ==========================================
+   CERT HEADER
+========================================== */
+
+.cert-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 36px;
+}
+
+.cert-icon {
+
+  width: 48px;
+
+  height: 48px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 16px;
+
+  color: #111;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00e5ff,
+      #d946ef
+    );
+}
+
+.cert-tag {
+
+  font-size: 0.72rem;
+
+  letter-spacing: 3px;
+
+  color: #a3b3c7;
+
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   CERT CONTENT
+========================================== */
+
+.cert-content h3 {
+
+  font-size: 1.8rem;
+
+  font-weight: 700;
+
+  margin-bottom: 10px;
+
+  color: white;
+}
+
+.cert-content p {
+
+  color: #9ca3af;
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+  .achievement-card {
+
+    grid-template-columns: 1fr;
+
+    text-align: center;
+
+    padding: 30px;
+  }
+
+  .achievement-icon {
+
+    margin: auto;
+  }
+
+  .achievement-rank {
+
+    margin-top: 15px;
+  }
+
+  .achievement-content h3 {
+
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .cert-card {
+
+    min-height: auto;
+  }
+
+  .achievement-rank h1 {
+
+    font-size: 3.2rem;
+  }
+
+  .achievement-content h3 {
+
+    font-size: 1.5rem;
+  }
 }

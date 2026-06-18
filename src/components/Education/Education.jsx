@@ -9,36 +9,33 @@ from "../../hooks/useScrollReveal";
 const education = [
 
 {
-degree:
-"Bachelor of Computer Applications",
+degree: "Bachelor of Computer Applications",
 
-college:
-"Maharishi University of Information Technology",
+college: "Maharishi University of Information Technology",
 
-year:
-"2023 - 2026"
+year: "2023 - 2026",
+
+percentage: "84.4%"
 },
 
 {
-degree:
-"Intermediate",
+degree: "Intermediate",
 
-college:
-"Cosmopolitan Inter College",
+college: "Cosmopolitan Inter College",
 
-year:
-"2023"
+year: "2023",
+
+percentage: "82%"
 },
 
 {
-degree:
-"High School",
+degree: "High School",
 
-college:
-"Shanti Public Higher Secondary School",
+college: "Shanti Public Higher Secondary School",
 
-year:
-"2021"
+year: "2021",
+
+percentage: "84.17%"
 }
 
 ];
@@ -99,9 +96,17 @@ delay:index*.2
 {item.college}
 </p>
 
-<span>
+<div className="education-meta">
+
+<span className="education-year">
 {item.year}
 </span>
+
+<span className="education-percentage">
+{item.percentage}
+</span>
+
+</div>
 
 </motion.div>
 

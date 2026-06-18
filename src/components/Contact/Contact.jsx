@@ -1,156 +1,156 @@
 import "./Contact.css";
 
-import { useState }
-from "react";
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaGithub } from "react-icons/fa";
+import useScrollReveal from "../../hooks/useScrollReveal";
 
-import {
-FaPhone,
-FaEnvelope,
-FaLinkedin
-}
-from "react-icons/fa";
+export default function Contact() {
+  const [ref, visible] = useScrollReveal();
 
-export default function Contact(){
+  const formRef = useRef();
 
-const [form,setForm] =
-useState({
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    message: "",
+  });
 
-name:"",
-email:"",
-message:""
+  const [sending, setSending] = useState(false);
 
-});
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-const [error,setError] =
-useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-const submitHandler = (e)=>{
+    setSending(true);
 
-e.preventDefault();
+    try {
+      await emailjs.sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        formRef.current,
+        "YOUR_PUBLIC_KEY",
+      );
 
-if(
-!form.name ||
-!form.email ||
-!form.message
-){
+      alert("Message sent successfully!");
 
-setError(
-"Please fill all fields."
-);
+      setFormData({
+        user_name: "",
+        user_email: "",
+        message: "",
+      });
+    } catch (error) {
+      alert("Failed to send message.");
+      console.error(error);
+    }
 
-return;
-}
+    setSending(false);
+  };
 
-setError("");
+  return (
+    <section id="contact" ref={ref} className="contact-section">
+      <div className="section-label">07 — CONTACT</div>
 
-alert(
-"Message Submitted Successfully"
-);
+      <h2 className="section-title">
+        Let's <span>Connect</span>
+      </h2>
 
-};
+      <div className="contact-container">
+        {/* Left Side */}
 
-return (
+        <motion.div
+          className="contact-info glass"
+          initial={{ opacity: 0, x: -60 }}
+          animate={visible ? { opacity: 1, x: 0 } : {}}
+        >
+          <h3>Get In Touch</h3>
 
-<section id="contact">
+          <p>
+            I'm currently looking for Full Stack Developer opportunities and
+            internships. Feel free to reach out.
+          </p>
 
-<h2 className="section-title">
-Contact Me
-</h2>
+          <div className="contact-links">
+            <a href="mailto:shuklashreya731@gmail.com" className="contact-link">
+              <FaEnvelope className="contact-icon" />
+              shuklashreya731@gmail.com
+            </a>
 
-<div className="contact-wrapper">
+            <a href="tel:+916387553114" className="contact-link">
+              <FaPhoneAlt className="contact-icon" />
+              +91 6387553114
+            </a>
 
-<div className="contact-info glass">
+            <a
+              href="https://linkedin.com/in/shreya-shukla-612894304"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-link"
+            >
+              <FaLinkedin className="contact-icon" />
+              LinkedIn Profile
+            </a>
 
-<div>
+            <a
+              href="https://github.com/shreyaishere/"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-link"
+            >
+              <FaGithub className="contact-icon" />
+              GitHub Profile
+            </a>
+          </div>
+        </motion.div>
 
-<FaPhone />
+        {/* Form */}
 
-<p>
-+91 6387553114
-</p>
+        <motion.form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className="contact-form glass"
+          initial={{ opacity: 0, x: 60 }}
+          animate={visible ? { opacity: 1, x: 0 } : {}}
+        >
+          <input
+            type="text"
+            name="user_name"
+            placeholder="Your Name"
+            required
+            value={formData.user_name}
+            onChange={handleChange}
+          />
 
-</div>
+          <input
+            type="email"
+            name="user_email"
+            placeholder="Your Email"
+            required
+            value={formData.user_email}
+            onChange={handleChange}
+          />
 
-<div>
+          <textarea
+            rows="6"
+            name="message"
+            placeholder="Your Message"
+            required
+            value={formData.message}
+            onChange={handleChange}
+          />
 
-<FaEnvelope />
-
-<p>
-shuklashreya731@gmail.com
-</p>
-
-</div>
-
-<div>
-
-<FaLinkedin />
-
-<p>
-linkedin.com/in/
-shreya-shukla-612894304
-</p>
-
-</div>
-
-</div>
-
-<form
-className="contact-form glass"
-onSubmit={submitHandler}
->
-
-<input
-type="text"
-placeholder="Your Name"
-onChange={(e)=>
-setForm({
-...form,
-name:e.target.value
-})
-}
-/>
-
-<input
-type="email"
-placeholder="Email"
-onChange={(e)=>
-setForm({
-...form,
-email:e.target.value
-})
-}
-/>
-
-<textarea
-rows="6"
-placeholder="Message"
-onChange={(e)=>
-setForm({
-...form,
-message:e.target.value
-})
-}
-/>
-
-{
-error &&
-<p className="error">
-{error}
-</p>
-}
-
-<button
-className="btn btn-primary"
->
-Send Message
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-);
-
+          <button type="submit" className="primary-btn" disabled={sending}>
+            {sending ? "Sending..." : "Send Message"}
+          </button>
+        </motion.form>
+      </div>
+    </section>
+  );
 }

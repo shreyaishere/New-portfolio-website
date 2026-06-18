@@ -60,3 +60,24 @@ body.light{
 rgba(255,255,255,.7);
 
 }
+:root{
+
+ --bg:#050816;
+
+ --card:#111827;
+
+ --text:#ffffff;
+
+ --muted:#94a3b8;
+}
+
+[data-theme="light"]{
+
+ --bg:#f8fafc;
+
+ --card:#ffffff;
+
+ --text:#111827;
+
+ --muted:#475569;
+}
